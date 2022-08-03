@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Menu\CreateFormRequest;
 use App\Http\Services\Menu\MenuService;
 use Illuminate\Http\JsonResponse;
+use App\Models\Menu;
 
 class MenuController extends Controller
 {
@@ -27,6 +28,13 @@ class MenuController extends Controller
     public function index(){
         return view('admin.menu.list', [
             'title' => 'Danh sách Danh mục mới nhất',
+            'menus' => $this->menuService->getAll()
+        ]);
+    }
+    public function show(Menu $menu) {
+        return view('admin.menu.edit', [
+            'title' => 'Chỉnh sửa danh mục' . $menu->name ,
+            'menu' => $menu,
             'menus' => $this->menuService->getAll()
         ]);
     }
