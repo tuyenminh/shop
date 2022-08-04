@@ -23,5 +23,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{menu}', [MenuController::class, 'show']);
             Route::DELETE('destroy', [MenuController::class, 'destroy']);
         });
+        #Product
+        Route::prefix('product')->group(function() {
+
+        });
     });
 });
