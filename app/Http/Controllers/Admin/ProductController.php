@@ -24,7 +24,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product.add', [
+            'title' => 'Thêm sản phẩm mới'
+        ]);
     }
 
     /**

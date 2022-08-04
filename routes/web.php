@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ProductController;
 
 Route::get('/admin/users/login', [LoginController::class, 'index'])->name('login');
 
@@ -15,6 +16,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [MainController::class, 'index'])->name('admin');
         Route::get('main', [MainController::class, 'index']);   
 
+        #Menu
         Route::prefix('menus')->group(function(){
             Route::get('add', [MenuController::class, 'create']);
             Route::post('add', [MenuController::class, 'store']);
@@ -24,7 +26,8 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [MenuController::class, 'destroy']);
         });
         #Product
-        Route::prefix('product')->group(function() {
+        Route::prefix('products')->group(function() {
+            Route::get('add', [ProductController::class, 'create']);
 
         });
     });
