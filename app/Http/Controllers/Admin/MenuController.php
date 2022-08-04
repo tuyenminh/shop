@@ -33,10 +33,14 @@ class MenuController extends Controller
     }
     public function show(Menu $menu) {
         return view('admin.menu.edit', [
-            'title' => 'Chỉnh sửa danh mục' . $menu->name ,
+            'title' => 'Chỉnh sửa danh mục: ' . $menu->name ,
             'menu' => $menu,
             'menus' => $this->menuService->getAll()
         ]);
+    }
+    public function update(Menu $menu, CreateFormRequest $request){
+        $this->menuService->update($request, $menu);
+        return redirect('/admin/menus/list');
     }
     public function destroy (Request $request): JsonResponse{
         $result = $this->menuService->destroy($request);
