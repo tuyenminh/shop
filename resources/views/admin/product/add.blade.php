@@ -22,7 +22,10 @@
                   </div>
                   <div class="form-group">
                     <label for="">Danh mục</label>
-                    <select class="form-control" name="parent_id"> 
+                    <select class="form-control" name="menu_id">
+                      @foreach ($products as $product) 
+                      <optiton value="{{ $product->id }}"> {{ $product->name }}</optiton>
+                      @endforeach 
                     </select>
                   </div>
                   <div class="form-group">
@@ -33,11 +36,10 @@
                     <label for="">Giá giảm</label>
                     <input type="text" name="price_sale" id="price_sale" class="form-control">
                   </div>
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                        Chọn ảnh sản phẩm:
-                        <input type="file" name="thumb" id="thumb">
-                        <input type="submit" value="Upload Image" name="thumb" id= "thumb">
-                    </form>
+                  <div class="form-group">
+                    <label for="menu">Ảnh sản phẩm</label>
+                    <input type="file" name="file" id="upload" class="form-control">
+                  </div>
                     <div class="form-group">
                     <lable>Kích hoạt</lable>
                     <div class="form-group">
