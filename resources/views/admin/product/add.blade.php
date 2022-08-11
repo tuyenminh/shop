@@ -39,6 +39,8 @@
                   <div class="form-group">
                     <label for="menu">Ảnh sản phẩm</label>
                     <input type="file" name="file" id="upload" class="form-control">
+                    <div id= "image_show"></div>
+                    <input type="hidden" name="file" id="file">
                   </div>
                     <div class="form-group">
                     <lable>Kích hoạt</lable>
