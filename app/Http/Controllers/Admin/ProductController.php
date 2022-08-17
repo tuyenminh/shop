@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Product\CreateFormRequest;
+use App\Http\Requests\Product\ProductRequest;
 use App\Http\Services\Product\ProductService;
+use Illuminate\Http\Response;
 
 class ProductController extends Controller
 {
@@ -15,26 +16,22 @@ class ProductController extends Controller
     }
     public function index()
     {
-        //
+        return view('admin.product.list', [
+            'title' => 'Danh sách sản phẩm',
+            'products' => $this->productService->get()
+        ]);
     }
 
     public function create()
     {
         return view('admin.product.add', [
             'title' => 'Thêm sản phẩm mới',
-            'products' => $this->productService->getParent()
+            'menus' => $this->productService->getMenu()
         ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(CreateFormRequest $request)
+    public function store(ProductRequest $request)
     {
-        $this->productService->create($request);
+        $this->productService->insert($request);
         return redirect()->back();
     }
 
@@ -43,12 +40,6 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //

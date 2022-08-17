@@ -7,40 +7,56 @@
 @section('content')
               <form action="" method="POST">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="">Tên sản phẩm</label>
-                    <input type="text" name="name" class="form-control" placeholder="Nhập tên sản phẩm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="menu">Tên sản phẩm</label>
+                        <input type="text" name="name" value="{{ old('name') }}" class="form-control" placeholder="Nhập tên sản phẩm">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Danh mục</label>
+                          <select class="form-control" name="menu_id"> 
+                            @foreach($menus as $menu)
+                              <option value="{{ $menu->id}}">{{ $menu->name}}</option>
+                            @endforeach
+                        
+                    </select>
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="">Mô tả</label>
-                    <textarea name="description" class="form-control"></textarea>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Giá gốc</label>
+                        <input type="number" name="price" value="{{ old('price') }}" id="price" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Giá giảm</label>
+                        <input type="number" name="price_sale" value="{{ old('price_sale') }}" id="price_sale" class="form-control">
+                      </div>
+                    </div>
                   </div>
-                
+                 
+                    <div class="form-group">
+                      <label for="">Mô tả</label>
+                      <textarea name="description" class="form-control">{{ old('description') }}</textarea>
+                    </div>
+                  
                   <div class="form-group">
                     <label for="">Mô tả chi tiết</label>
-                    <textarea name="content" id="content" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Danh mục</label>
-                    <select class="form-control" name="menu_id">
-                      @foreach ($products as $product) 
-                      <optiton value="{{ $product->id }}"> {{ $product->name }}</optiton>
-                      @endforeach 
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="">Giá gốc</label>
-                    <input type="text" name="price" id="price" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Giá giảm</label>
-                    <input type="text" name="price_sale" id="price_sale" class="form-control">
+                    <textarea name="content" id="content" class="form-control">{{ old('content') }}</textarea>
                   </div>
                   <div class="form-group">
                     <label for="menu">Ảnh sản phẩm</label>
                     <input type="file" name="file" id="upload" class="form-control">
-                    <div id= "image_show"></div>
-                    <input type="hidden" name="file" id="file">
+                    <div id= "image_show">
+
+                    </div>
+                    <input type="hidden" name="thumb" id="thumb">
                   </div>
                     <div class="form-group">
                     <lable>Kích hoạt</lable>
@@ -57,7 +73,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Tạo sản phẩm</button>
+                    <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
                 </div>
                 @csrf
               </form>

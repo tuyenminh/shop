@@ -13,8 +13,16 @@ class UpdateTableProduct extends Migration
      */
     public function up()
     {
-        Schema::table('products', function(Blueprint $table) {
-            $table->string('thumb');
+        Schema::create('products', function(Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->longText('content');
+            $table->integer('menu_id');
+            $table->integer('price')->nullable();
+            $table->integer('price_sale')->nullable();
+            $table->integer('active');
+            $table->timestamps();
         });
     }
 
