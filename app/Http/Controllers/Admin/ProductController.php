@@ -46,31 +46,28 @@ class ProductController extends Controller
         ]); 
     }
 
-    public function edit($id)
+    public function edit(Request $request, Product $product)
     {
-        //
+        $this->productService->update($request, $product);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, Product $product) {
+        $result = $this->productService->update($request, $product);
+        if ($result) {
+            return redirect('/admin/products/list');
+        }
+        return redirect()->back();
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+        
+    public function destroy(Request $request)
     {
-        //
+        $result = $this->productService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công sản phẩm'
+            ]);
+        }
+        return response()->json(['error' => true]);
     }
 }
