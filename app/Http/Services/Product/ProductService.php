@@ -39,7 +39,8 @@ class ProductService {
         
     }
     public function get() {
-        return Product::with('menu')->orderByDesc('id')->paginate(15);
+        return Product::with('menu')
+->orderByDesc('id')->paginate(15);
     }
 
     

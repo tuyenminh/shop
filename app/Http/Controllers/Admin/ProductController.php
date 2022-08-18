@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Product\ProductRequest;
 use App\Http\Services\Product\ProductService;
 use Illuminate\Http\Response;
+use App\Models\Product;
+
 
 class ProductController extends Controller
 {
@@ -35,9 +37,13 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+       return view('admin.product.edit',[
+        'title' => 'Chỉnh sửa sản phẩm',
+        'product' => $product,
+        'menus' => $this->productService->getMenu()
+        ]); 
     }
 
     public function edit($id)
