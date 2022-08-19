@@ -20,4 +20,7 @@ class SliderService {
         }
         return true;
     }
+    public function get() {
+        return Slider::orderByDesc('id')->paginate(15);
+    }
 }

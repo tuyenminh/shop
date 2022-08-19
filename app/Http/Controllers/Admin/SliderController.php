@@ -26,4 +26,10 @@ class SliderController extends Controller
         $this->slider->insert($request);
         return redirect()->back();
     }
+    public function index() {
+        return view('admin.slider.list', [
+            'title' => 'Danh sách Slider mới nhất',
+            'sliders' => $this->slider->get()
+        ]);
+    }
 }
