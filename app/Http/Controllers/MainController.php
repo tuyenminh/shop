@@ -19,7 +19,7 @@ class MainController extends Controller
     public function index() {
         return view('main', [
             'title' => 'Shop nuoc hoa',
-            // 'slider' => $this->slider->show(),
+            'sliders' => $this->slider->show(),
             'menus' => $this->menu->show(),
         ]);
     }
