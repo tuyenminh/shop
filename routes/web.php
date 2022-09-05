@@ -52,3 +52,4 @@ Route::middleware(['auth'])->group(function () {
     }); 
 });
 Route::get('/', [MainController::class, 'index']);
+Route::post('/services/load-product', [MainController::class, 'loadproduct']);

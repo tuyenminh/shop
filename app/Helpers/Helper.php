@@ -66,4 +66,9 @@ class Helper
         }
         return false;
     }
+    public static function price($price = 0, $pricesalse = 0) {
+        if ($pricesalse != 0 ) return number_format($pricesalse );
+        if ($price != 0 ) return number_format($price);
+        return '<a href= "/Lien-he.html/">LIÊN HỆ</a>';
+    }
 }

@@ -41,12 +41,12 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href = "/"> Trang chủ </a> 
+								<a href = "/"> TRANG CHỦ </a> 
 							</li>
 							{!! $menusHtml !!}
 
 							<li>
-								<a href="contact.html">Liên hệ</a>
+								<a href="contact.html">LIÊN HỆ</a>
 							</li>
 						</ul>
 					</div>	
@@ -105,12 +105,12 @@
 
 			<ul class="main-menu-m">
 				<li class="active-menu">
-					<a href = "/"> Trang chủ </a> 
+					<a href = "/"> TRANG CHỦ </a> 
 				</li>
 				{!! $menusHtml !!}
 
 				<li>
-					<a href="contact.html">Liên hệ</a>
+					<a href="contact.html">LIÊN HỆ</a>
 				</li>
 			</ul>
 		</div>

@@ -40,6 +40,7 @@
                 @endforeach
         </tbody>
     </table>
-    {!! $products->links() !!}
- 
+    <di class="card-footer clearfix"> 
+        {!! $products->links() !!}
+    </di>
 @endsection
