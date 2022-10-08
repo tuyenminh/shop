@@ -2,21 +2,21 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
-      <img src="/template/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <img src="/template/admin/dist/img/login.jfif" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">QUẢN TRỊ VIÊN</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
-      </div>
+      </div> -->
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -35,9 +35,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
               <p>
                 Danh mục
                 <i class="right fas fa-angle-left"></i>
@@ -54,6 +56,366 @@
                 <a href="/admin/menus/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Thương hiệu
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm thương hiệu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách thương hiệu</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Chất liệu dây
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/chatlieudays/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm chất liệu dây</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/chatlieudays/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách chất liệu dây</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Chất liệu mặt kính
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/chatlieumatkinhs/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm chất liệu mặt kính</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/chatlieumatkinhs/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách chất liệu mặt kính</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Độ chống nước
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm độ chống nước</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách độ chống nước</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Đường kính mặt
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm đường kính mặt</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách đường kính mặt</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Giới tính
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm giới tính</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách giới tính</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Hình dáng mặt
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm hình dáng măt</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách hình dáng mặt</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Kiểu mặt
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm kiểu mặt</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách kiểu mặt</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Loại đồng hồ
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm loại đồng hồ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách loại đồng hồ</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Loại mặt số
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm loại mặt số</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách loại mặt số</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Loại máy
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm loại máy</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách loại máy</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Màu dây
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm màu dây</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách màu dây</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Màu mặt
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm màu mặt</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách màu mặt</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Phong cách
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm phong cách</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách phong cách</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Tiện ích
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/menus/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm tiện ích</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/menus/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách tiện ích</p>
                 </a>
               </li>
             </ul>   

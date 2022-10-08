@@ -11,11 +11,14 @@ function loadMore() {
         data : { page },
         url : '/services/load-product',
         success : function (result) {
-            if (result.html !== ''){
-                $('#loadProduct').appen(result.html);
+            if (result.html != ''){
+                $('#loadProduct').append(result.html);
                 $('#page').val(page + 1);
-            }else 
+            }else{
             alert ('Đã load xong sản phẩm');
+            $('#button-loadMore').css('display', 'none');
+            }
+            
         }
     })
 
