@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tienich extends Migration
+class Tieniche extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Tienich extends Migration
      */
     public function up()
     {
-        Schema::create('tienichs', function (Blueprint $table) {
+        Schema::create('tieniches', function (Blueprint $table) {
             $table->id();
             $table->string('ten', 255);
             $table->timestamps();

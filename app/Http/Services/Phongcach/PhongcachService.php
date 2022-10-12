@@ -22,4 +22,21 @@ class PhongcachService {
         }
         return true;
     }
+    public function getAll(){
+        return Phongcach::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $phongcach = Phongcach::where('id', $request->input('id'))->first();
+        if ($phongcach) {
+            $phongcach->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $phongcach): bool {
+        $phongcach->ten = (string) $request->input('ten');
+        $phongcach->save();
+        Session::flash('success', 'Cập nhật thành công phong cách');
+        return true;
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Phongcach extends Migration
+class Phongcache extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Phongcach extends Migration
      */
     public function up()
     {
-        Schema::create('phongcachs', function (Blueprint $table) {
+        Schema::create('phongcaches', function (Blueprint $table) {
             $table->id();
             $table->string('ten', 255);
             $table->timestamps();

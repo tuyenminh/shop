@@ -26,4 +26,32 @@ class LoaimayController extends Controller
         $this->loaimayService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.loaimay.list', [
+            'title' => 'Danh sách loại máy mới nhất',
+            'loaimays' => $this->loaimayService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->loaimayService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công loại máy'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Loaimay $loaimay) {
+        return view('admin.loaimay.edit', [
+            'title' => 'Chỉnh sửa loại máy: ' . $loaimay->ten ,
+            'loaimay' => $loaimay,
+            'loaimays' => $this->loaimayService->getAll()
+        ]);
+    }
+    public function update(Loaimay $loaimay, CreateFormRequest $request){
+        $this->loaimayService->update($request, $loaimay);
+        return redirect('/admin/loaimays/list');
+    }
 }

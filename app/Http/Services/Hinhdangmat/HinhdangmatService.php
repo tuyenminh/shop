@@ -22,4 +22,21 @@ class HinhdangmatService {
         }
         return true;
     }
+    public function getAll(){
+        return Hinhdangmat::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $hinhdangmat = Hinhdangmat::where('id', $request->input('id'))->first();
+        if ($hinhdangmat) {
+            $hinhdangmat->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $hinhdangmat): bool {
+        $hinhdangmat->ten = (string) $request->input('ten');
+        $hinhdangmat->save();
+        Session::flash('success', 'Cập nhật thành công hình dáng mặt');
+        return true;
+    }
 }

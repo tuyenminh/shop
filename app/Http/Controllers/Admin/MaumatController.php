@@ -26,4 +26,32 @@ class MaumatController extends Controller
         $this->maumatService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.maumat.list', [
+            'title' => 'Danh sách màu mặt mới nhất',
+            'maumats' => $this->maumatService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->maumatService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công màu mặt'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Maumat $maumat) {
+        return view('admin.maumat.edit', [
+            'title' => 'Chỉnh sửa màu mặt: ' . $maumat->ten ,
+            'maumat' => $maumat,
+            'maumats' => $this->maumatService->getAll()
+        ]);
+    }
+    public function update(Maumat $maumat, CreateFormRequest $request){
+        $this->maumatService->update($request, $maumat);
+        return redirect('/admin/maumats/list');
+    }
 }

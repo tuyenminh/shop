@@ -26,4 +26,32 @@ class ChatlieumatkinhController extends Controller
         $this->chatlieumatkinhService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.chatlieumatkinh.list', [
+            'title' => 'Danh sách chất liệu mặt kính mới nhất',
+            'chatlieumatkinhs' => $this->chatlieumatkinhService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->chatlieumatkinhService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công chất liệu mặt kính'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Chatlieumatkinh $chatlieumatkinh) {
+        return view('admin.chatlieumatkinh.edit', [
+            'title' => 'Chỉnh sửa chất liệu dây: ' . $chatlieumatkinh->ten ,
+            'chatlieumatkinh' => $chatlieumatkinh,
+            'chatlieumatkinhs' => $this->chatlieumatkinhService->getAll()
+        ]);
+    }
+    public function update(Chatlieumatkinh $chatlieumatkinh, CreateFormRequest $request){
+        $this->chatlieumatkinhService->update($request, $chatlieumatkinh);
+        return redirect('/admin/chatlieumatkinhs/list');
+    }
 }

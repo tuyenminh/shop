@@ -26,4 +26,32 @@ class HinhdangmatController extends Controller
         $this->hinhdangmatService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.hinhdangmat.list', [
+            'title' => 'Danh sách hình dáng mặt mới nhất',
+            'hinhdangmats' => $this->hinhdangmatService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->hinhdangmatService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công hình dáng mặt'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Hinhdangmat $hinhdangmat) {
+        return view('admin.hinhdangmat.edit', [
+            'title' => 'Chỉnh sửa chất liệu dây: ' . $hinhdangmat->ten ,
+            'hinhdangmat' => $hinhdangmat,
+            'hinhdangmats' => $this->hinhdangmatService->getAll()
+        ]);
+    }
+    public function update(Hinhdangmat $hinhdangmat, CreateFormRequest $request){
+        $this->hinhdangmatService->update($request, $hinhdangmat);
+        return redirect('/admin/hinhdangmats/list');
+    }
 }

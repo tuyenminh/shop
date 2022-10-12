@@ -22,4 +22,22 @@ class ChatlieudayService {
         }
         return true;
     }
+    public function getAll(){
+        return Chatlieuday::orderbyDesc('id')->paginate(20);
+    }
+
+    public function delete($request) {
+        $chatlieuday = Chatlieuday::where('id', $request->input('id'))->first();
+        if ($chatlieuday) {
+            $chatlieuday->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $chatlieuday): bool {
+        $chatlieuday->ten = (string) $request->input('ten');
+        $chatlieuday->save();
+        Session::flash('success', 'Cập nhật thành công chất liệu dây');
+        return true;
+    }
 }

@@ -26,4 +26,32 @@ class LoaimatsoController extends Controller
         $this->loaimatsoService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.loaimatso.list', [
+            'title' => 'Danh sách loại mặt số mới nhất',
+            'loaimatsos' => $this->loaimatsoService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->loaimatsoService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công loại mặt số'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Loaimatso $loaimatso) {
+        return view('admin.chatlieuday.edit', [
+            'title' => 'Chỉnh sửa loại mặt số: ' . $loaimatso->ten ,
+            'loaimatso' => $loaimatso,
+            'loaimatsos' => $this->loaimatsoService->getAll()
+        ]);
+    }
+    public function update(Loaimatso $loaimatso, CreateFormRequest $request){
+        $this->loaimatsoService->update($request, $loaimatso);
+        return redirect('/admin/loaimatsos/list');
+    }
 }

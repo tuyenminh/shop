@@ -71,13 +71,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/thuonghieus/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm thương hiệu</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/thuonghieus/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách thương hiệu</p>
                 </a>
@@ -143,13 +143,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/dochongnuocs/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm độ chống nước</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/dochongnuocs/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách độ chống nước</p>
                 </a>
@@ -167,13 +167,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/duongkinhmats/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm đường kính mặt</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/duongkinhmats/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách đường kính mặt</p>
                 </a>
@@ -191,13 +191,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/gioitinhs/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm giới tính</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/gioitinhs/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách giới tính</p>
                 </a>
@@ -215,13 +215,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/hinhdangmats/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm hình dáng măt</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/hinhdangmats/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách hình dáng mặt</p>
                 </a>
@@ -239,13 +239,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/kieumats/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm kiểu mặt</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/kieumats/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách kiểu mặt</p>
                 </a>
@@ -263,13 +263,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/loaidonghos/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm loại đồng hồ</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/loaidonghos/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách loại đồng hồ</p>
                 </a>
@@ -287,13 +287,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/loaimatsos/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm loại mặt số</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/loaimatsos/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách loại mặt số</p>
                 </a>
@@ -311,13 +311,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/loaimays/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm loại máy</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/loaimays/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách loại máy</p>
                 </a>
@@ -335,13 +335,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/maudays/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm màu dây</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/maudays/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách màu dây</p>
                 </a>
@@ -359,13 +359,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/maumats/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm màu mặt</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/maumats/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách màu mặt</p>
                 </a>
@@ -383,13 +383,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/phongcachs/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm phong cách</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/phongcachs/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách phong cách</p>
                 </a>
@@ -407,13 +407,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/admin/menus/add" class="nav-link">
+                <a href="/admin/tienichs/add" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm tiện ích</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/menus/list" class="nav-link">
+                <a href="/admin/tienichs/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách tiện ích</p>
                 </a>

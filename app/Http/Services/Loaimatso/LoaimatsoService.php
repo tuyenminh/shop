@@ -22,4 +22,21 @@ class LoaimatsoService {
         }
         return true;
     }
+    public function getAll(){
+        return Loaimatso::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $loaimatso = Loaimatso::where('id', $request->input('id'))->first();
+        if ($loaimatso) {
+            $loaimatso->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $loaimatso): bool {
+        $loaimatso->ten = (string) $request->input('ten');
+        $loaimatso->save();
+        Session::flash('success', 'Cập nhật thành công loại mặt số');
+        return true;
+    }
 }

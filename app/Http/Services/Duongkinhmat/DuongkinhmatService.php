@@ -22,4 +22,21 @@ class DuongkinhmatService {
         }
         return true;
     }
+    public function getAll(){
+        return Duongkinhmat::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $duongkinhmat = Duongkinhmat::where('id', $request->input('id'))->first();
+        if ($duongkinhmat) {
+            $duongkinhmat->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $duongkinhmat): bool {
+        $duongkinhmat->ten = (string) $request->input('ten');
+        $duongkinhmat->save();
+        Session::flash('success', 'Cập nhật thành công đường kính mặt');
+        return true;
+    }
 }

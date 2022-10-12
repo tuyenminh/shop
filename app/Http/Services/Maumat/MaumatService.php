@@ -22,4 +22,21 @@ class MaumatService {
         }
         return true;
     }
+    public function getAll(){
+        return Maumat::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $maumat = Maumat::where('id', $request->input('id'))->first();
+        if ($maumat) {
+            $maumat->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $maumat): bool {
+        $maumat->ten = (string) $request->input('ten');
+        $maumat->save();
+        Session::flash('success', 'Cập nhật thành công màu mặt');
+        return true;
+    }
 }

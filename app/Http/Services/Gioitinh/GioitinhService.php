@@ -22,4 +22,21 @@ class GioitinhService {
         }
         return true;
     }
+    public function getAll(){
+        return Gioitinh::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $gioitinh = Gioitinh::where('id', $request->input('id'))->first();
+        if ($gioitinh) {
+            $gioitinh->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $gioitinh): bool {
+        $gioitinh->ten = (string) $request->input('ten');
+        $gioitinh->save();
+        Session::flash('success', 'Cập nhật thành công giới tính');
+        return true;
+    }
 }

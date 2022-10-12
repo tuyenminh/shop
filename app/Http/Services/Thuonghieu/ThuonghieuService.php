@@ -22,4 +22,21 @@ class ThuonghieuService {
         }
         return true;
     }
+    public function getAll(){
+        return Thuonghieu::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $thuonghieu = Thuonghieu::where('id', $request->input('id'))->first();
+        if ($thuonghieu) {
+            $thuonghieu->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $thuonghieu): bool {
+        $thuonghieu->ten = (string) $request->input('ten');
+        $thuonghieu->save();
+        Session::flash('success', 'Cập nhật thành công thương hiệu');
+        return true;
+    }
 }

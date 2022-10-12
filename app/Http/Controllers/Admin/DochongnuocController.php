@@ -26,4 +26,32 @@ class DochongnuocController extends Controller
         $this->dochongnuocService->create($request);
         return redirect()->back();
     }
+    public function index(){
+        return view('admin.dochongnuoc.list', [
+            'title' => 'Danh sách độ chống nước mới nhất',
+            'dochongnuocs' => $this->dochongnuocService->getAll()
+        ]);
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->dochongnuocService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công độ chống nước'
+            ]);
+        }
+        return response()->json(['error' => true]);
+    }
+    public function show(Dochongnuoc $dochongnuoc) {
+        return view('admin.dochongnuoc.edit', [
+            'title' => 'Chỉnh sửa độ chống nước: ' . $dochongnuoc->ten ,
+            'dochongnuoc' => $dochongnuoc,
+            'dochongnuocs' => $this->dochongnuocService->getAll()
+        ]);
+    }
+    public function update(Dochongnuoc $dochongnuoc, CreateFormRequest $request){
+        $this->dochongnuocService->update($request, $dochongnuoc);
+        return redirect('/admin/dochongnuocs/list');
+    }
 }

@@ -22,4 +22,21 @@ class ChatlieumatkinhService {
         }
         return true;
     }
+    public function getAll(){
+        return Chatlieumatkinh::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $chatlieumatkinh = Chatlieumatkinh::where('id', $request->input('id'))->first();
+        if ($chatlieumatkinh) {
+            $chatlieumatkinh->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $chatlieumatkinh): bool {
+        $chatlieumatkinh->ten = (string) $request->input('ten');
+        $chatlieumatkinh->save();
+        Session::flash('success', 'Cập nhật thành công chất liệu mặt kính');
+        return true;
+    }
 }

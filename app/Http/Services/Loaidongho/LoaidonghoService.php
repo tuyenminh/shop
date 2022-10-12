@@ -22,4 +22,21 @@ class LoaidonghoService {
         }
         return true;
     }
+    public function getAll(){
+        return Loaidongho::orderbyDesc('id')->paginate(20);
+    }
+    public function delete($request) {
+        $loaidongho = Loaidongho::where('id', $request->input('id'))->first();
+        if ($loaidongho) {
+            $loaidongho->delete();
+            return true;
+        }
+        return false;
+    }
+    public function update($request, $loaidongho): bool {
+        $loaidongho->ten = (string) $request->input('ten');
+        $loaidongho->save();
+        Session::flash('success', 'Cập nhật thành công loại đồng hồ');
+        return true;
+    }
 }
