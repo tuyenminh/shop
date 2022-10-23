@@ -22,6 +22,8 @@ use App\Http\Controllers\Admin\MaumatController;
 use App\Http\Controllers\Admin\PhongcachController;
 use App\Http\Controllers\Admin\ThuonghieuController;
 use App\Http\Controllers\Admin\TienichController;
+use App\Http\Controllers\Admin\DonghoController;
+
 
 
 Route::get('/admin/users/login', [LoginController::class, 'index'])->name('login');
@@ -177,6 +179,15 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{tienich}', [TienichController::class, 'update']);
             Route::get('edit/{tienich}', [TienichController::class, 'show']);
             Route::DELETE('destroy', [TienichController::class, 'destroy']);
+        });
+        #Dongho
+        Route::prefix('donghos')->group(function() {
+            Route::get('add', [DonghoController::class, 'create']);
+            Route::post('add', [DonghoController::class, 'store']);
+            Route::get('list', [DonghoController::class, 'index']);
+            Route::get('edit/{dongho}', [DonghoController::class, 'show']);
+            Route::post('edit/{dongho}', [DonghoController::class, 'update']);
+            Route::DELETE('destroy', [DonghoController::class, 'destroy']);
         });
         #Product
         Route::prefix('products')->group(function() {

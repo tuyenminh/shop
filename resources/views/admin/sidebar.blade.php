@@ -65,6 +65,30 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <i class="fa-sharp fa-solid fa-chart-simple"></i>
               <p>
+                Đồng hồ
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/donghos/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm đồng hồ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/donghos/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách đồng hồ</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
                 Thương hiệu
                 <i class="right fas fa-angle-left"></i>
               </p>
