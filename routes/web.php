@@ -23,6 +23,8 @@ use App\Http\Controllers\Admin\PhongcachController;
 use App\Http\Controllers\Admin\ThuonghieuController;
 use App\Http\Controllers\Admin\TienichController;
 use App\Http\Controllers\Admin\DonghoController;
+use App\Http\Controllers\Admin\HinhanhController;
+
 
 
 
@@ -207,7 +209,15 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{slider}', [SliderController::class, 'update']);
             Route::DELETE('destroy', [SliderController::class, 'destroy']);
         });
-
+        #Hinhanh
+        Route::prefix('hinhanhs')->group(function() {
+            Route::get('add', [HinhanhController::class, 'create']);
+            Route::post('add', [HinhanhController::class, 'store']);
+            Route::get('list', [HinhanhController::class, 'index']);
+            Route::get('edit/{hinhanh}', [HinhanhController::class, 'show']);
+            Route::post('edit/{hinhanh}', [HinhanhController::class, 'update']);
+            Route::DELETE('destroy', [HinhanhController::class, 'destroy']);
+        });
         #Upload
         Route::post('upload/services', [UploadController::class, 'store']);
     

@@ -1,5 +1,5 @@
 <!-- Main Sidebar Container -->
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-dark-primary elevation-4" data-spy="scroll" data-target=".navbar-example">
     <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
       <img src="/template/admin/dist/img/login.jfif" alt="Admin Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -36,7 +36,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <i class="fa-sharp fa-solid fa-chart-simple"></i>
@@ -59,7 +59,7 @@
                 </a>
               </li>
             </ul>   
-          </li>
+          </li> -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -78,6 +78,30 @@
               </li>
               <li class="nav-item">
                 <a href="/admin/donghos/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách đồng hồ</p>
+                </a>
+              </li>
+            </ul>   
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fa-sharp fa-solid fa-chart-simple"></i>
+              <p>
+                Hình ảnh đồng hồ
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/hinhanhs/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm hình ảnh đồng hồ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/hinhanhs/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách đồng hồ</p>
                 </a>
@@ -444,7 +468,7 @@
               </li>
             </ul>   
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -466,7 +490,7 @@
                 </a>
               </li>
             </ul>   
-          </li>  
+          </li>   -->
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>

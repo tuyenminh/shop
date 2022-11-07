@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Giaban extends Migration
+class Hinhanh extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class Giaban extends Migration
      */
     public function up()
     {
-        Schema::create('giabans', function (Blueprint $table) {
+        Schema::create('hinhanhs', function (Blueprint $table) {
+            $table->id();
+            $table->string('dh_ma', 50);
+            $table->string('ha__ten', 255);
             $table->timestamps();
-            $table->integer('dh_ma');
-            $table->float('gb_gia', 255);
         });
     }
+
     /**
      * Reverse the migrations.
      *

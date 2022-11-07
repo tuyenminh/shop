@@ -24,25 +24,27 @@ class DonghoRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'cld_id' => 'required',
-            // 'clmk_id' => 'required',
-            // 'dcn_id' => 'required',
-            // 'dkm_id' => 'required',
-            // 'gt_id' => 'required',
-            // 'hdm_id' => 'required',
-            // 'km_id' => 'required',
-            // 'ldh_id' => 'required',
-            // 'lms_id' => 'required',
-            // 'lm_id' => 'required',
-            // 'md_id' => 'required',
-            // 'mm_id' => 'required',
-            // 'pc_id' => 'required',
-            // 'th_id' => 'required',
-            // 'ti_id' => 'required'
+        'dh_ma' => 'required',
+        //     'cld_id' => 'required',
+        //     'clmk_id' => 'required',
+        //     'dcn_id' => 'required',
+        //     'dkm_id' => 'required',
+        //     'gt_id' => 'required',
+        //     'hdm_id' => 'required',
+        //     'km_id' => 'required',
+        //     'ldh_id' => 'required',
+        //     'lms_id' => 'required',
+        //     'lm_id' => 'required',
+        //     'md_id' => 'required',
+        //     'mm_id' => 'required',
+        //     'pc_id' => 'required',
+        //     'th_id' => 'required',
+        //     'ti_id' => 'required'
         ];
     }
     public function messages() {
         return [
+            'dh_ma.required' => 'Vui lòng nhập mã đồng hồ',
             // 'cld_id.required' => 'Vui lòng chọn chất liệu dây',
             // 'clmk_id.required' => 'Vui lòng chọn chất liệu mặt kính',
             // 'dcn_id.required' => 'Vui lòng chọn độ chống nước',

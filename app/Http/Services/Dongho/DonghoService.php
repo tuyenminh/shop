@@ -26,6 +26,9 @@ use Illuminate\Http\Request;
 
 class DonghoService {
     public function get() {
+        // return Dongho::with('chatlieuday,chatlieumatkinh')->orderByDesc('id')->paginate(15);
+    }
+    public function getAll() {
         return Dongho::orderbyDesc('id')->paginate(20);
     }
     public function getChatlieuday() {
@@ -73,11 +76,11 @@ class DonghoService {
     public function getTienich() {
         return Tienich::where(null)->get();
     }
-   
     public function create($request)
     {
-        try {
-            Dongho::create([
+     try {
+        Dongho::create ([
+                'dh_ma'   => (string) $request->input('dh_ma'),
                 'th_id' => (int) $request->input('th_id'),
                 'gt_id' => (int) $request->input('gt_id'),
                 'lms_id' => (int) $request->input('lms_id'),
@@ -94,15 +97,35 @@ class DonghoService {
                 'pc_id' => (int) $request->input('pc_id'),
                 'ti_id' => (int) $request->input('ti_id')
             ]);
-            Session::flash('success', 'Tạo đồng hồ thành công');
-        }catch (\Exception $err) {
-            Session::flash('error', $err->getMessage());
+            Session:: flash('success', 'Thêm đồng hồ thành công');
+        } catch (\Exception $err) {
+            Session::flash('error', 'Thêm đồng hồ không thành công');
+            \Log::info($err->getMessage());
             return false;
-
         }
         return true;
-       
     }
+    public function update($request, $dongho) {
+        try {
+            $dongho->fill($request->input());
+            $dongho->save();
+            Session::flash('success', 'Cập nhật thành công');
+        }catch (\Exception $err) {
+            Session::flash('error', 'Cập nhật không thành công');
+            \Log::info($err->getMessage());  
+            return false;
+        }
+        return true;
+    }
+    public function delete($request) {
+        $dongho = Dongho::where('id', $request->input('id'))->first();
+        if ($dongho) {
+            $dongho->delete();
+            return true;
+        }
+        return false;
+    }   
 
+    
     
 }

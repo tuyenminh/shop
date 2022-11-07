@@ -15,6 +15,7 @@ class Dongho extends Migration
     {
         Schema::create('donghos', function (Blueprint $table) {
             $table->id();
+            $table->string('dh_ma', 50);
             $table->integer('gt_id');
             $table->integer('th_id');
             $table->integer('lms_id');
@@ -41,7 +42,6 @@ class Dongho extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donghos');
-
+        //
     }
 }

@@ -18,8 +18,7 @@ class DonghoController extends Controller {
     {
         return view('admin.dongho.list', [
             'title' => 'Danh sách đồng hồ',
-            'donghos' => $this->donghoService->get()
-
+            'donghos' => $this->donghoService->getAll()
         ]);
     }
 
@@ -49,6 +48,52 @@ class DonghoController extends Controller {
     {
         $this->donghoService->create($request);
         return redirect()->back();
+    }
+    public function show(Dongho $dongho)
+    {
+       return view('admin.dongho.edit',[
+            'title' => 'Chỉnh sửa đồng hồ',
+            'dongho' => $dongho,
+            'donghos' => $this->donghoService->getAll(),
+            'chatlieudays' => $this->donghoService->getChatlieuday(),
+            'chatlieumatkinhs' => $this->donghoService->getChatlieumatkinh(),
+            'dochongnuocs' => $this->donghoService->getDochongnuoc(),
+            'duongkinhmats' => $this->donghoService->getDuongkinhmat(),
+            'gioitinhs' => $this->donghoService->getGioitinh(),
+            'hinhdangmats' => $this->donghoService->getHinhdangmat(),
+            'kieumats' => $this->donghoService->getKieumat(),
+            'loaidonghos' => $this->donghoService->getLoaidongho(),
+            'loaimatsos' => $this->donghoService->getLoaimatso(),
+            'loaimays' => $this->donghoService->getLoaimay(),
+            'maudays' => $this->donghoService->getMauday(),
+            'maumats' => $this->donghoService->getMaumat(),
+            'phongcachs' => $this->donghoService->getPhongcach(),
+            'thuonghieus' => $this->donghoService->getThuonghieu(),
+            'tienichs' => $this->donghoService->getTienich()
+        ]); 
+    }
+     public function edit(Request $request, Dongho $dongho)
+    {
+        $this->donghoService->update($request, $dongho);
+    }
+
+    public function update(Request $request, Dongho $dongho) {
+        $result = $this->donghoService->update($request, $dongho);
+        if ($result) {
+            return redirect('/admin/donghos/list');
+        }
+        return redirect()->back();
+    }
+    public function destroy(Request $request)
+    {
+        $result = $this->donghoService->delete($request);
+        if ($request) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xóa thành công đồng hồ'
+            ]);
+        }
+        return response()->json(['error' => true]);
     }
    
 }

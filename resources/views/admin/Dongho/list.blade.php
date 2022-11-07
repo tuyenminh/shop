@@ -7,23 +7,23 @@
 <table class="table">
         <thead>
             <tr>
-                <th style= "width: 50px;">Mã</th>
-                <!-- <th>Tên đường kính mặt</th> -->
-                <th>Thương hiệu</th>
-                <th>Giới tính</th>
-                <th>Loại mặt số</th>
-                <th>Loại máy</th>
-                <th>Đường kính mặt</th>
-                <th>Kiểu mặt</th>
-                <th>Hình dáng mặt</th>
-                <th>Chất liệu mặt kính</th>
-                <th>Chất liệu dây</th>
-                <th>Màu mặt</th>
-                <th>Màu dây</th>
-                <th>Loại đồng hồ</th>
-                <th>Độ chống nước</th>
-                <th>Phong cách</th>
-                <th>Tiện ích</th>
+                <th style= "width: 50px;">STT</th>
+                <th style= "width: 200px;">Mã đồng hồ</th>
+                <th style= "width: 50px;">Thương hiệu</th>
+                <th style= "width: 50px;">Giới tính</th>
+                <th style= "width: 50px;">Loại mặt số</th>
+                <th style= "width: 50px;">Loại máy</th>
+                <th style= "width: 50px;">Đường kính mặt</th>
+                <th style= "width: 50px;">Kiểu mặt</th>
+                <th style= "width: 50px;">Hình dáng mặt</th>
+                <th style= "width: 50px;">Chất liệu mặt kính</th>
+                <th style= "width: 50px;">Chất liệu dây</th>
+                <th style= "width: 50px;">Màu mặt</th>
+                <th style= "width: 50px;">Màu dây</th>
+                <th style= "width: 50px;">Loại đồng hồ</th>
+                <th style= "width: 50px;">Độ chống nước</th>
+                <th style= "width: 50px;">Phong cách</th>
+                <th style= "width: 50px;">Tiện ích</th>
                 <th>Ngày tạo</th>
                 <th style= "width: 100px;" >&nbsp;</th>
             </tr>
@@ -32,21 +32,22 @@
             @foreach($donghos as $key => $dongho)
         <tr>
                     <td>{{ $dongho->id }}</td>
-                    <td>{{ $dongho->th_id }}</td>
-                    <td>{{ $dongho->gt_id }}</td>
-                    <td>{{ $dongho->lms_id }}</td>
-                    <td>{{ $dongho->lm_id }}</td>
-                    <td>{{ $dongho->dkm_id }}</td>
-                    <td>{{ $dongho->km_id }}</td>
-                    <td>{{ $dongho->hdm_id }}</td>
-                    <td>{{ $dongho->clmk_id }}</td>
-                    <td>{{ $dongho->cld_id }}</td>
-                    <td>{{ $dongho->mm_id }}</td>
-                    <td>{{ $dongho->md_id }}</td>
-                    <td>{{ $dongho->ldh_id }}</td>
-                    <td>{{ $dongho->dcn_id }}</td>
-                    <td>{{ $dongho->pc_id }}</td>
-                    <td>{{ $dongho->ti_id }}</td>
+                    <td>{{ $dongho->dh_ma }}</td>
+                    <td>{{ $dongho->thuonghieu->ten }}</td>
+                    <td>{{ $dongho->gioitinh->ten}}</td>
+                    <td>{{ $dongho->loaimatso->ten }}</td>
+                    <td>{{ $dongho->loaimay->ten }}</td>
+                    <td>{{ $dongho->duongkinhmat->ten }}</td>
+                    <td>{{ $dongho->kieumat->ten }}</td>
+                    <td>{{ $dongho->hinhdangmat->ten }}</td>
+                    <td>{{ $dongho->chatlieumatkinh->ten }}</td>
+                    <td>{{ $dongho->chatlieuday->ten }}</td>
+                    <td>{{ $dongho->maumat->ten }}</td>
+                    <td>{{ $dongho->mauday->ten }}</td>
+                    <td>{{ $dongho->loaidongho->ten }}</td>
+                    <td>{{ $dongho->dochongnuoc->ten }}</td>
+                    <td>{{ $dongho->phongcach->ten }}</td>
+                    <td>{{ $dongho->tienich->ten }}</td>
                     <td>{{ $dongho->updated_at }}</td>
                     <td>
                         <a class="btn btn-primary btn-sm" href="/admin/donghos/edit/{{ $dongho->id }}">
