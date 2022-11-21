@@ -22,6 +22,9 @@ class GioitinhService {
         }
         return true;
     }
+    public function show(){
+        return Gioitinh::select('ten', 'id')->get();
+    }
     public function getAll(){
         return Gioitinh::orderbyDesc('id')->paginate(20);
     }

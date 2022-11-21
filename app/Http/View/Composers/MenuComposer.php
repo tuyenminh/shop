@@ -3,6 +3,7 @@
 namespace App\Http\View\Composers;
 use Illuminate\View\View;
 use App\Models\Menu;
+use App\Models\Thuonghieu;
 
 
 class MenuComposer {
@@ -18,7 +19,10 @@ class MenuComposer {
     
     public function compose(View $view)
     {
-        $menus = Menu::select('id', 'name', 'parent_id')->where('active', 1)->orderByDesc('id')->get();
-        $view->with('menus', $menus);
+        // $menus = Menu::select('id', 'name', 'parent_id')->where('active', 1)->orderByDesc('id')->get();
+        // $view->with('menus', $menus);
+        $thuonghieus = Thuonghieu:: select('id','ten')->orderByDesc('id')->get();
+        $view->with('thuonghieus', $thuonghieus);
+
     }
 }

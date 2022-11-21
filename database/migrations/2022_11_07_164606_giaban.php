@@ -14,11 +14,12 @@ class Giaban extends Migration
     public function up()
     {
         Schema::create('giabans', function (Blueprint $table) {
-            $table->timestamps();
-            $table->integer('dh_ma');
-            $table->float('gb_gia', 255);
+            $table->date('gb_ngay');
+            $table->string('dh_ma', 50);
+            $table->integer('gia');
         });
     }
+
     /**
      * Reverse the migrations.
      *

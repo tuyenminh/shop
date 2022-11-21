@@ -37,35 +37,52 @@ class Helper
         return $active == 0 ? '<span class="btn btn-danger btn-xs">NO</span>'
         : '<span class="btn btn-success btn-xs">YES</span>';
     }
-    public static function menus($menus, $parent_id = 0):string {
+    public static function thuonghieus($thuonghieus):string {
         $html = '';
-        foreach ($menus as $key => $menu) {
-            if ($menu->parent_id == $parent_id ) {
+        foreach ($thuonghieus as $key => $thuonghieu) {
                 $html .= '
                     <li> 
-                        <a href= "/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') .' .html">
-                            ' . $menu->name . '
+                        <a href= "/danh-muc/' . $thuonghieu->id . '-' . Str::slug($thuonghieu->ten, '-') .' .html">
+                            ' . $thuonghieu->ten . '
                         </a>';
-                unset($menus[$key]);
-                    if (self::isChild($menus, $menu->id)){
-                        $html .= '<ul class = "sub-menu">';
-                        $html .= self::menus($menus, $menu->id);
-                        $html .= '</ul>';
-                    }
-                    $html .='</li> 
-                ';
-            }
-        }
+                                    unset($thuonghieus[$key]);
+
+                                    $html .= '</li> ';
+        } 
+    
         return $html;
-    }
-    public static function isChild($menus, $id):bool {
-        foreach ($menus as $menu) {
-            if ($menu->parent_id == $id) {
-                return true;
-            }
-        }
-        return false;
-    }
+}
+
+    // public static function menus($menus, $parent_id = 0):string {
+    //     $html = '';
+    //     foreach ($menus as $key => $menu) {
+    //         if ($menu->parent_id == $parent_id ) {
+    //             $html .= '
+    //                 <li> 
+    //                     <a href= "/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') .' .html">
+    //                         ' . $menu->name . '
+    //                     </a>';
+    //             unset($menus[$key]);
+    //                 if (self::isChild($menus, $menu->id)){
+    //                     $html .= '<ul class = "sub-menu">';
+    //                     $html .= self::menus($menus, $menu->id);
+    //                     $html .= '</ul>';
+    //                 }
+    //                 $html .='</li> 
+    //             ';
+    //         }
+    //     }
+    //     return $html;
+    // }
+
+    // public static function isChild($menus, $id):bool {
+    //     foreach ($menus as $menu) {
+    //         if ($menu->parent_id == $id) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
     public static function price($price = 0, $pricesalse = 0) {
         if ($pricesalse != 0 ) return number_format($pricesalse );
         if ($price != 0 ) return number_format($price);

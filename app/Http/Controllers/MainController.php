@@ -6,25 +6,27 @@ use Illuminate\Http\Request;
 use App\Http\Services\Slider\SliderService;
 use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Product\ProductService2;
+use App\Http\Services\Gioitinh\GioitinhService;
 
 
 class MainController extends Controller
 {
     protected $slider;
-    protected $menu;
+    protected $gioitinh;
     protected $product;
 
-    public function __construct(SliderService $slider, MenuService $menu, 
-    ProductService2 $product) {
+    public function __construct(SliderService $slider, GioitinhService $gioitinh, ProductService2 $product) {
         $this->slider = $slider;
-        $this->menu = $menu;
+        $this->gioitinh = $gioitinh;
         $this->product = $product;
+
     }
     public function index() {
         return view('main', [
-            'title' => 'Shop nuoc hoa',
+            'title' => 'Hệ thống bán Đồng Hồ',
             'sliders' => $this->slider->show(),
-            'menus' => $this->menu->show(),
+            // 'menus' => $this->menu->show(),
+            'gioitinhs' => $this->gioitinh->show(),
             'products' => $this->product->get()
         ]);
     }

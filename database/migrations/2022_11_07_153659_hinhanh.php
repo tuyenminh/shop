@@ -16,7 +16,7 @@ class Hinhanh extends Migration
         Schema::create('hinhanhs', function (Blueprint $table) {
             $table->id();
             $table->string('dh_ma', 50);
-            $table->string('ha__ten', 255);
+            $table->string('thumb', 255);
             $table->timestamps();
         });
     }

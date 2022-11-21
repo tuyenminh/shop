@@ -10,7 +10,7 @@
                 <th style= "width: 50px;">STT</th>
                 <th>Mã đồng hồ</th>
                 <th>Ảnh</th>
-                <th style= "width: 100px;" >&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
         </thead>
         <tbody>
@@ -18,10 +18,9 @@
         <tr>
                     <td>{{ $hinhanh->id }}</td>
                     <td>{{ $hinhanh->dongho->dh_ma}}</td>
-                    <td>{{ $hinhanh->ha_ten }}</td>
                     <td>
-                        <a href="{{ $hinhanh->ha_ten }}" target="_blank">
-                            <img src="{{ $hinhanh->ha_ten }}" height="50px">
+                        <a href="{{ $hinhanh->thumb }}" target="_blank">
+                            <img src="{{ $hinhanh->thumb }}" height="50px">
                         </a>
                     </td>
                     <td>

@@ -26,7 +26,7 @@
                         </a>
                     </div>
                     <input type="hidden" name="thumb" value="{{ $slider->thumb }}" id="thumb">
-                </div>
+                  </div>
                   <div class="form-group">
                         <label for="">Sắp xếp</label>
                         <input type="number" name="sort_by" value="{{ $slider->sort_by }}" id="sort_by" class="form-control">

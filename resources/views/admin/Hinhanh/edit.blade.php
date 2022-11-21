@@ -13,7 +13,8 @@
                         <label for="">Mã đồng hồ</label>
                             <select class="form-control" name="dh_ma"> 
                             @foreach($donghos as $dongho)
-                                <option value="{{ $dongho->id}}">{{ $dongho->dh_ma}}</option>
+                                <option value="{{ $dongho->id}}" {{ $hinhanh->dh_ma == $dongho->id ? '' : ''}}>
+                                {{ $dongho->dh_ma}}</option>
                             @endforeach
                             </select>
                       </div>
@@ -21,16 +22,20 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="menu">Ảnh sản phẩm</label>
-                          <input type="file" name="file" id="upload" class="form-control">
-                            <div id= "image_show"></div>
-                          <input type="hidden" name="thumb" id="thumb">
-                      </div>   
+                    <div class="form-group">
+                    <label for="menu">Ảnh đồng hồ</label>
+                    <input type="file" name="file" id="upload" class="form-control">
+                    <div id= "image_show">
+                        <a href="{{ $hinhanh->thumb }}">
+                            <img src="{{ $hinhanh->thumb }}" width="100px">
+                        </a>
+                    </div>
+                    <input type="hidden" name="thumb" value="{{ $hinhanh->thumb }}" id="thumb">
+                  </div>  
                     </div>
                   </div>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Thêm hình ảnh</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật hình ảnh</button>
                 </div>
                 @csrf
               </form>

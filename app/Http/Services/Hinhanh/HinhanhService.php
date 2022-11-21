@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Services\Hinhanh;
 
-
 use App\Models\Hinhanh;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +15,10 @@ class HinhanhService {
     public function create($request) {
         try {
             
-            Hinhanh::create($request->input());
+            Hinhanh::create([
+                'dh_ma'   => (string) $request->input('dh_ma'),
+                'thumb' => (string) $request->input('thumb'),
+            ]);
         
             Session::flash('success', 'Thêm hình ảnh mới thành công');
         } catch (\Exception $err) {
@@ -32,9 +35,9 @@ class HinhanhService {
         try {
             $hinhanh->fill($request->input());
             $hinhanh->save();
-            Session::flash('success', 'Cập nhật Hình ảnh mới thành công'); 
+            Session::flash('success', 'Cập nhật hình ảnh mới thành công'); 
         } catch (\Exception $err) {
-            Session::flash('error', 'Cập nhật Hình ảnh không thành công'); 
+            Session::flash('error', 'Cập nhật hình ảnh không thành công'); 
             Log::info($err->getMessage());
             return false;
         }
@@ -43,7 +46,7 @@ class HinhanhService {
     public function destroy ($request) {
         $hinhanh = Hinhanh::where('id', $request->input('id'))->first();
         if ($hinhanh) {
-            $path = str_replace('storage', 'public', $hinhanh->ha_ten);
+            $path = str_replace('storage', 'public', $hinhanh->thumb);
             Storage::delete($path);
             $hinhanh->delete();
             return true;

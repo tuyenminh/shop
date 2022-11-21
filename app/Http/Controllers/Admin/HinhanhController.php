@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Services\Hinhanh\HinhanhService;
+use App\Http\Requests\Hinhanh\HinhanhRequest;
 use App\Models\Hinhanh;
 
 
@@ -20,13 +21,11 @@ class HinhanhController extends Controller
             'donghos' => $this->hinhanh->getDongho()
         ]);
     }
-    public function store(Request $request) {
-        $this->validate($request, [
-            'ha_ten' => 'required'
-    ]);
-    $this->hinhanh->create($request);
-    return redirect()->back();
+    public function store(HinhanhRequest $request) { 
+        $this->hinhanh->create($request);
+        return redirect()->back();
     }
+
     public function index() {
         return view('admin.hinhanh.list', [
             'title' => 'Danh sách hình ảnh mới nhất',
@@ -36,7 +35,14 @@ class HinhanhController extends Controller
     public function show(Hinhanh $hinhanh) {
         return view('admin.hinhanh.edit', [
             'title' => 'Chỉnh sửa hình ảnh',
-            'hinhanh' => $hinhanh
+            'hinhanh' => $hinhanh,
+            'hinhanhs' => $this->hinhanh->getAll(),
+            'donghos' => $this->hinhanh->getDongho()
+        ]);
+    }
+    public function update(Request $request, Hinhanh $hinhanh) {
+        $this->validate($request, [
+            'thumb' => 'required'
         ]);
         $result = $this->hinhanh->update($request, $hinhanh);
         if ($result) {
