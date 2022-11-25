@@ -23,7 +23,7 @@ class MainController extends Controller
     }
     public function index() {
         return view('main', [
-            'title' => 'Hệ thống bán Đồng Hồ',
+            'title' => 'Hệ thống bán Đồng',
             'sliders' => $this->slider->show(),
             // 'menus' => $this->menu->show(),
             'gioitinhs' => $this->gioitinh->show(),
